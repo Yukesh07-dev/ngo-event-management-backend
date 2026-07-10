@@ -24,6 +24,13 @@ public class AuthController {
         this.passwordEncoder = passwordEncoder;
         this.userService = userService;
     }
+    @GetMapping("/")
+public ResponseEntity<Map<String, String>> homeHealthCheck() {
+    return ResponseEntity.ok(Map.of(
+        "status", "UP",
+        "message", "NGO Management Backend API is running successfully!"
+    ));
+}
 @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody User user) {
         try {
