@@ -36,9 +36,11 @@ public class SecurityConfig {
 
         CorsConfiguration configuration = new CorsConfiguration();
 
+        // Include your production Netlify URL along with local configurations
         configuration.setAllowedOrigins(List.of(
                 "http://localhost:5500",
-                "http://127.0.0.1:5500"
+                "http://127.0.0.1:5500",
+                "https://impactpulseorg.netlify.app"
         ));
 
         configuration.setAllowedMethods(List.of(
@@ -50,7 +52,9 @@ public class SecurityConfig {
         ));
 
         configuration.setAllowedHeaders(List.of("*"));
-        configuration.setAllowCredentials(false);
+        
+        // Change this to true to support preflight authorization checks
+        configuration.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source =
                 new UrlBasedCorsConfigurationSource();
