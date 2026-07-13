@@ -6,8 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*")
-@RestController
+@CrossOrigin(origins = "https://impactpulseorg.netlify.app", allowCredentials = "true")@RestController
 @RequestMapping("/api/users")
 public class UserController {
 

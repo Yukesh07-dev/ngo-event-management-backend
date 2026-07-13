@@ -12,7 +12,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://impactpulseorg.netlify.app", allowCredentials = "true")
 public class AuthController {
 
     private final UserRepository userRepository;
