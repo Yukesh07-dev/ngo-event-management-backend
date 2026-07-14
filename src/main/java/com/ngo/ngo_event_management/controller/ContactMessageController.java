@@ -8,7 +8,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/contact")
-@CrossOrigin(origins="*")
 public class ContactMessageController {
 
     private final ContactMessageRepository repository;
