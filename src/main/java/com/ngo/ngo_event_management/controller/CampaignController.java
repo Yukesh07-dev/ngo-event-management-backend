@@ -8,8 +8,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/campaigns")
-@CrossOrigin(origins = "*")
 public class CampaignController {
+
 
     private final CampaignRepository repository;
 
