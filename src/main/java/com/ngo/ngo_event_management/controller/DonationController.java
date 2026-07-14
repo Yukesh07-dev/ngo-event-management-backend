@@ -8,7 +8,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/donations")
-@CrossOrigin(origins="*")
 public class DonationController {
 
     private final DonationRepository donationRepository;
