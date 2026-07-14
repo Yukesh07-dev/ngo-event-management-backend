@@ -8,32 +8,27 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/gallery")
+@CrossOrigin(origins = "https://impactpulseorg.netlify.app", allowCredentials = "true")
 public class GalleryController {
 
     private final GalleryRepository repository;
 
-    public GalleryController(
-            GalleryRepository repository) {
-
+    public GalleryController(GalleryRepository repository) {
         this.repository = repository;
     }
 
     @GetMapping
     public List<Gallery> getImages(){
-
         return repository.findAll();
     }
 
     @PostMapping
-    public Gallery addImage(
-            @RequestBody Gallery image){
-
+    public Gallery addImage(@RequestBody Gallery image){
         return repository.save(image);
     }
+
     @DeleteMapping("/{id}")
-public void deleteGallery(@PathVariable Integer id){
-
-    repository.deleteById(id);
-
-}
+    public void deleteGallery(@PathVariable Integer id){
+        repository.deleteById(id);
+    }
 }

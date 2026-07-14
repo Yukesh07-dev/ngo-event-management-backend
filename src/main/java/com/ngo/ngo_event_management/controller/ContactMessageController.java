@@ -8,26 +8,22 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/contact")
+@CrossOrigin(origins = "https://impactpulseorg.netlify.app", allowCredentials = "true")
 public class ContactMessageController {
 
     private final ContactMessageRepository repository;
 
-    public ContactMessageController(
-            ContactMessageRepository repository) {
-
+    public ContactMessageController(ContactMessageRepository repository) {
         this.repository = repository;
     }
 
     @GetMapping
     public List<ContactMessage> getMessages() {
-
         return repository.findAll();
     }
 
     @PostMapping
-    public ContactMessage saveMessage(
-            @RequestBody ContactMessage message) {
-
+    public ContactMessage saveMessage(@RequestBody ContactMessage message) {
         return repository.save(message);
     }
 }
